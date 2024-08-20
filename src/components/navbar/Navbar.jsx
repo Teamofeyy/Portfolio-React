@@ -5,6 +5,9 @@ import './navbar.css'
 
 const Navbar = () => {
 
+    const activeLink = 'nav-list__link nav-list__link--active'
+    const normalLink = 'nav-list__link'
+
     return ( 
         <nav className="nav">
             <div className="container">
@@ -19,15 +22,15 @@ const Navbar = () => {
                     </button>
 
                     <ul className="nav-list">
-                        <NavLink to="/" className="nav-list__link">
+                        <NavLink to="/" className={({isActive}) => isActive ? activeLink : normalLink}>
                             Home
                         </NavLink>
 
-                        <NavLink to="/projects" className="nav-list__link">
+                        <NavLink to="/projects" className={({isActive}) => isActive ? activeLink : normalLink}>
                             Projects
                         </NavLink>
 
-                        <NavLink to="/contacts" className="nav-list__link">
+                        <NavLink to="/contacts" className={({isActive}) => isActive ? activeLink : normalLink}>
                              Contacts
                         </NavLink>
                     </ul>
